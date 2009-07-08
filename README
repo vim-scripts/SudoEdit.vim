@@ -1,0 +1,31 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2709
+
+If you like this plugin, please rate it!
+
+This plugin enables vim to read files, using sudo or su or any other tool that
+can be used for changing the authentication of a user. Therefore it needs any
+of sudo or su installed and usable by the user. This means, you have to know
+the credentials to authenticate yourself as somebody else.
+
+This plugin is basically an extended version from sudo.vim 
+(http://www.vim.org/scripts/script.php?script_id=729), which seems to be 
+unmaintained now. For compatibility reasons, it also supports the sudo: protocol 
+handler, as sudo.vim provides. 
+
+That's why this plugin probably won't work on Windows, but you might be able
+to configure it to use a method that works on Windows (see :h SudoEdit-config)
+
+By default SudoEdit will first try to use sudo and if sudo is not found it
+will fall back and try to use su. Note, that you might have to configure these
+tools, before they can use them successfully.
+
+SudoEdit requires at least a Vim Version 7 with patch 111 installed. Patch 111
+introduced the shellescape() functionality.
+
+The Plugin provides the 2 Commands :SudoRead for reading a file and SudoWrite
+for writing a file using the provided super user authentication mechanism. Both 
+commands have file completion enabled to ease the selection of files (if you are able 
+to read the path as ordinary user).
+
+You can optionally configure it to use any other tool, instead of sudo/su. So you could 
+probably adjust it to work on Windows or you can use ssh as authentication method.
